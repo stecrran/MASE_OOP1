@@ -1,18 +1,21 @@
 package mase.oop1.code.example;
 
 public abstract class Boat implements Machine {
+	
 	protected double thePrice;
 	
 	public Boat(double price) {
-		price = thePrice;
+		thePrice = price;
 	}
 	
+	@Override
 	public Double getPrice() {
 		return this.thePrice;
 	}
 	
+	@Override
 	public String toString() {
-		return "";
+		return this.getClass().getSimpleName();
 	}
 	
 }
@@ -24,12 +27,14 @@ class Yacht extends Boat implements Desirable {
 		super(price);
 	}
 	
+	@Override
 	public void start() {
-		
+		System.out.println("Yacht::start");
 	}
 	
+	@Override
 	public void stop() {
-		
+		System.out.println("Yacht::stop");
 	}
 	
 }
@@ -38,13 +43,15 @@ class Canoe extends Boat {
 	public Canoe(double price) {
 		super(price);
 	}
-		
+	
+	@Override
 	public void start() {
-			
+		System.out.println("Canoe::start");
 	}
 		
+	@Override
 	public void stop() {
-			
+		System.out.println("Canoe::stop");
 	}
 	
 }
@@ -56,12 +63,14 @@ class Kayak extends Boat {
 		super(price);
 	}
 		
+	@Override
 	public void start() {
-			
+		System.out.println("Kayak::start");	
 	}
 		
+	@Override
 	public void stop() {
-			
+		System.out.println("Kayak::stop");
 	}
 	
 }

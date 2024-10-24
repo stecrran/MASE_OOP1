@@ -14,12 +14,11 @@ public abstract class Car implements Machine {
 
 	@Override
 	public String toString() {
-		return "";
+		return this.getClass().getSimpleName();
 	}
 
 	public abstract boolean isPractical();
 }
-
 
 class Saloon extends Car {
 
@@ -29,20 +28,19 @@ class Saloon extends Car {
 
 	@Override
 	public void start() {
-
+		System.out.println("Saloon::start()");
 	}
 
 	@Override
 	public void stop() {
-
+		System.out.println("Saloon::stop()");
 	}
 
 	@Override
 	public boolean isPractical() {
-		return false;
+		return true;
 	}
 }
-
 
 class Hatchback extends Car {
 
@@ -52,17 +50,17 @@ class Hatchback extends Car {
 
 	@Override
 	public void start() {
-
+		System.out.println("Hatchback::start()");
 	}
 
 	@Override
 	public void stop() {
-
+		System.out.println("Hatchback::stop()");
 	}
 
 	@Override
 	public boolean isPractical() {
-		return false;
+		return true;
 	}
 }
 
@@ -74,12 +72,12 @@ class Convertible extends Car implements Desirable {
 
 	@Override
 	public void start() {
-		
+		System.out.println("Covertible::start()");
 	}
 
 	@Override
 	public void stop() {
-
+		System.out.println("Covertible::stop()");
 	}
 
 	@Override
@@ -87,5 +85,4 @@ class Convertible extends Car implements Desirable {
 		return false;
 	}
 
-	}
-
+}

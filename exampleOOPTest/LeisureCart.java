@@ -1,15 +1,13 @@
 package mase.oop1.code.example;
 
-import java.sql.Date;
 
 public class LeisureCart {
 
 	private final String location;
-
 	private final Machine machine;
 	
 	// UML marks this as "Public"
-	LeisureCart(String location,  Machine aMachine) {
+	private LeisureCart(String location,  Machine aMachine) {
 		this.location = location;
 		
 		if (aMachine instanceof Saloon) {
@@ -36,9 +34,13 @@ public class LeisureCart {
 
 	}
 	
+	public static LeisureCart createNewInstance(String location,  Machine aMachine) {
+		return new LeisureCart(location, aMachine);
+	}
+	
 	
 	public String getLocation() {
-		return this.location;
+		return location;
 	}
 	
 	
@@ -67,7 +69,7 @@ public class LeisureCart {
 	}
 	
 	public String toString() {
-		return "";
+		return "\tWhere?:\t" + location + "\tHow much?:" + machine.getPrice() + "\n\t\tDetails:" + machine.toString();
 	}
 	
 }
